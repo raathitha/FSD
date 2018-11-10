@@ -1,0 +1,4 @@
+<dataset>
+    <book bookid="1" publisheddate="2012-10-21 11:13:28" title="Lorem ipsum" volume="20" price="13.00" />
+    <book bookid="2" publisheddate="2012-10-23 11:13:28" title="Lorem ipsum 2" volume="27" price="14.00" />
+</dataset>

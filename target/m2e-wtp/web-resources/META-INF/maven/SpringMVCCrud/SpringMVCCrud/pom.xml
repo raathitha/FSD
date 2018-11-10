@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SpringMVCCrud</groupId>
+  <artifactId>SpringMVCCrud</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SpringMVCCrud Webapp</name>
+   <url>http://maven.apache.org</url>
+   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springframework.version>4.3.7.RELEASE</springframework.version>
+    <hibernate.version>4.3.11.Final</hibernate.version>
+    <mysql.version>5.1.10</mysql.version>
+    <jstl.version>1.2</jstl.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <version>3.8.1</version>
+       <scope>test</scope>
+    </dependency>
+
+    <!-- Spring mvc 4 dependencies -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${springframework.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${springframework.version}</version>
+    </dependency>
+
+    <!-- jstl for jsp page -->
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>javax.servlet.jsp-api</artifactId>
+        <version>2.3.1</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.8.1</version>
+    </dependency>
+
+    <!--MYSQL Connector -->
+    <dependency>
+       <groupId>mysql</groupId>
+       <artifactId>mysql-connector-java</artifactId>
+       <version>8.0.12</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>SpringMVCCrud</finalName>
+    <plugins>
+    <plugin>
+   <groupId>org.apache.tomcat.maven</groupId>
+   <artifactId>tomcat7-maven-plugin</artifactId>
+   <version>2.2</version>
+   <configuration>
+      <path>/</path>
+          <port>9123</port><server>mytomcat7</server>
+          
+      <!-- Set update to true to avoid exist war packag
+      e can not be override error -->
+      <update>true</update>
+      <!-- Because deploy this maven project using plugin in pom so use the manager-script role user. -->
+   </configuration>
+</plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+        <version>3.6.1</version>
+      </plugin>
+    </plugins>
+  </build>
+  <packaging>war</packaging>
+</project>
